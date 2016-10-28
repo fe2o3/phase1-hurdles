@@ -95,3 +95,4 @@ ENV/
 # Pydev project settings
 .pydevproject
 
+.idea/

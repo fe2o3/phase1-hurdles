@@ -110,6 +110,14 @@ class ProbabilisticStateMachine(object):
                 # precomputing for better speed
                 self.cum_sum_mat[i, k, :] = np.cumsum(transition_probs)
 
+    def printProbs(self):
+        for i in range(len(self.transition_mat)):
+            print("\n from state {}".format(i))
+            for k in range(len(self.transition_mat[i])):
+                for j in range(len(self.transition_mat[i][k])):
+                    print("{} ".format(self.transition_mat[i][k][j]))
+                print("\n")
+
     def start(self):
         '''
         Run first iteration as a special case
@@ -131,7 +139,7 @@ class ProbabilisticStateMachine(object):
 
         # set up transition matrices
         self._generate_transition_matrices(self._N, self._stick_to_path_prob)
-
+        self.printProbs()
 
         if self._initial_state is not None:
             self.state = self._initial_state

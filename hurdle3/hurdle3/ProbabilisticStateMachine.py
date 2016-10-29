@@ -112,7 +112,7 @@ class ProbabilisticStateMachine(object):
 
     def printProbs(self):
         for i in range(len(self.transition_mat)):
-            print("\n from state {}".format(i),end="")
+            print("\n from state %d" %(i),end="")
             for k in range(len(self.transition_mat[i])):
                 for j in range(len(self.transition_mat[i][k])):
                     print("%0.4f " % (self.transition_mat[i][k][j]),end="")

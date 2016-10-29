@@ -20,6 +20,8 @@
 #
 
 import numpy as np
+import sys
+
 
 class ProbabilisticStateMachine(object):
     '''
@@ -112,11 +114,12 @@ class ProbabilisticStateMachine(object):
 
     def printProbs(self):
         for i in range(len(self.transition_mat)):
-            print("\n from state %d" %(i),end="")
+            sys.stdout.write("\n from state %d" % i)
             for k in range(len(self.transition_mat[i])):
                 for j in range(len(self.transition_mat[i][k])):
-                    print("%0.4f " % (self.transition_mat[i][k][j]),end="")
-                print("\n",end="")
+                    sys.stdout.write("%0.4f " % self.transition_mat[i][k][j] )
+                  #  print("%0.4f " % (self.transition_mat[i][k][j]),end="")
+                sys.stdout.write("\n")
 
     def start(self):
         '''
